@@ -1,851 +1,531 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, nofollow">
-<title>Bienvenue chez les Somier — Allinges, Haute-Savoie</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Livret d'accueil — Le Cocon d'Allinges</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..700,0..1&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Cormorant+Garamond:wght@400;500;600&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#122A31;
-    --bg:#F6F4EF;
-    --paper:#FFFFFF;
-    --lake-deep:#0E4A57;
-    --lake:#1C6E7D;
-    --lake-light:#4FA8AE;
-    --peak:#5C7A88;
-    --peak-soft:#B9C6CC;
-    --amber:#E2A63B;
-    --rust:#B54A33;
-    --line: rgba(18,42,49,0.12);
-    --shadow: 0 12px 32px -14px rgba(14,74,87,0.35);
-    --radius: 18px;
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Manrope',sans-serif;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  h1,h2,h3,h4{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    line-height:1.08;
-    margin:0 0 .4em;
-    letter-spacing:-0.01em;
-  }
-  a{color:var(--lake-deep);}
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.72rem;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    color:var(--lake);
-    display:flex;
-    align-items:center;
-    gap:.55em;
-    margin-bottom:.9em;
-  }
-  .eyebrow .num{
-    background:var(--lake-deep);
-    color:#fff;
-    border-radius:100px;
-    padding:.2em .65em;
-    font-size:.72rem;
-  }
-  .wrap{max-width:920px; margin:0 auto; padding:0 24px;}
-  .wrap-wide{max-width:1120px; margin:0 auto; padding:0 24px;}
-
-  /* ---------- NAV ---------- */
-  header.nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(246,244,239,0.88);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav-inner{
-    max-width:1120px; margin:0 auto; padding:14px 24px;
-    display:flex; align-items:center; justify-content:space-between;
-  }
-  .brand{
-    display:flex; align-items:center; gap:10px;
-    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem;
-    text-decoration:none; color:var(--ink);
-  }
-  .brand svg{width:30px; height:24px; flex-shrink:0;}
-  .links{display:flex; gap:26px; list-style:none; margin:0; padding:0;}
-  .links a{
-    text-decoration:none; color:var(--ink); font-size:.88rem; font-weight:600;
-    opacity:.72; transition:opacity .2s;
-    padding:6px 0; border-bottom:2px solid transparent;
-  }
-  .links a:hover, .links a.active{opacity:1; border-color:var(--amber);}
-  .burger{display:none; background:none; border:none; cursor:pointer; padding:6px;}
-  .burger span{display:block; width:22px; height:2px; background:var(--ink); margin:5px 0; transition:.25s;}
-  .mobile-panel{
-    display:none; position:fixed; inset:0; background:var(--lake-deep); z-index:60;
-    padding:28px; color:#fff;
-  }
-  .mobile-panel.open{display:block;}
-  .mobile-panel .close{position:absolute; top:22px; right:24px; background:none; border:none; color:#fff; font-size:1.8rem; cursor:pointer;}
-  .mobile-panel ul{list-style:none; padding:0; margin:70px 0 0;}
-  .mobile-panel li{border-bottom:1px solid rgba(255,255,255,0.15);}
-  .mobile-panel a{
-    display:block; padding:16px 4px; color:#fff; text-decoration:none;
-    font-family:'Fraunces',serif; font-size:1.3rem; font-weight:500;
-  }
-  .mobile-panel .tag{font-family:'IBM Plex Mono',monospace; font-size:.7rem; color:var(--amber); margin-right:12px;}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative; overflow:hidden;
-    background:linear-gradient(180deg,#0E3C47 0%, #14586A 55%, #1C6E7D 100%);
-    color:#fff; padding:88px 0 0;
-  }
-  .topo{position:absolute; inset:0; opacity:.16; mix-blend-mode:screen;}
-  .hero-inner{
-    position:relative; z-index:2; max-width:920px; margin:0 auto; padding:0 24px 40px;
-    text-align:center;
-  }
-  .hero .eyebrow{justify-content:center; color:var(--amber);}
-  .hero h1{
-    font-size:clamp(2.3rem,5.4vw,4rem);
-    color:#fff;
-    margin-bottom:.3em;
-  }
-  .hero h1 em{font-style:italic; color:var(--amber);}
-  .hero p.lead{
-    max-width:560px; margin:0 auto 1.6em; font-size:1.08rem; color:rgba(255,255,255,0.88);
-  }
-  .signatures{
-    font-family:'Fraunces',serif; font-style:italic; font-size:1.15rem; color:var(--amber);
-    margin-bottom:1.8em;
-  }
-  .hero-contact{
-    display:inline-flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:56px;
-  }
-  .pill{
-    background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25);
-    padding:9px 18px; border-radius:100px; font-size:.85rem; color:#fff; text-decoration:none;
-    display:inline-flex; align-items:center; gap:8px; font-weight:600;
-  }
-  .pill:hover{background:rgba(255,255,255,0.22);}
-
-  /* skyline signature divider */
-  .skyline{display:block; width:100%; height:auto; position:relative; z-index:2;}
-  .skyline-section{position:relative; line-height:0;}
-
-  /* ---------- SECTIONS ---------- */
-  section{padding:80px 0;}
-  section.alt{background:var(--paper);}
-  .section-head{max-width:640px; margin-bottom:44px;}
-  .section-head h2{font-size:clamp(1.7rem,3.4vw,2.4rem);}
-  .section-head p{color:var(--peak); font-size:1.02rem; margin:0;}
-
-  .card{
-    background:var(--paper); border:1px solid var(--line); border-radius:var(--radius);
-    padding:26px 28px; box-shadow:var(--shadow);
-  }
-  .grid{display:grid; gap:20px;}
-  .grid-2{grid-template-columns:repeat(2,1fr);}
-  .grid-3{grid-template-columns:repeat(3,1fr);}
-
-  .transport-card{
-    background:var(--paper); border:1px solid var(--line); border-radius:14px; padding:22px;
-  }
-  .transport-card .icon{
-    width:38px; height:38px; border-radius:10px; background:var(--lake-deep); color:#fff;
-    display:flex; align-items:center; justify-content:center; margin-bottom:14px; font-size:1.1rem;
-  }
-  .transport-card h4{font-size:1.05rem; margin-bottom:.3em;}
-  .transport-card p{margin:.2em 0; font-size:.92rem; color:var(--ink);}
-  .transport-card .meta{font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--lake); }
-
-  /* accordion */
-  .accordion{border-top:1px solid var(--line);}
-  .acc-item{border-bottom:1px solid var(--line);}
-  .acc-trigger{
-    width:100%; text-align:left; background:none; border:none; cursor:pointer;
-    display:flex; align-items:center; justify-content:space-between; gap:16px;
-    padding:20px 4px; font-family:'Fraunces',serif; font-size:1.12rem; color:var(--ink); font-weight:500;
-  }
-  .acc-trigger .plus{
-    flex-shrink:0; width:26px; height:26px; border-radius:50%; border:1.5px solid var(--lake);
-    position:relative; transition:transform .3s;
-  }
-  .acc-trigger .plus::before, .acc-trigger .plus::after{
-    content:""; position:absolute; background:var(--lake); left:50%; top:50%;
-    transform:translate(-50%,-50%);
-  }
-  .acc-trigger .plus::before{width:11px; height:1.6px;}
-  .acc-trigger .plus::after{width:1.6px; height:11px; transition:opacity .25s;}
-  .acc-item.open .acc-trigger .plus{transform:rotate(180deg); background:var(--lake-deep); border-color:var(--lake-deep);}
-  .acc-item.open .acc-trigger .plus::before, .acc-item.open .acc-trigger .plus::after{background:#fff;}
-  .acc-item.open .acc-trigger .plus::after{opacity:0;}
-  .acc-panel{max-height:0; overflow:hidden; transition:max-height .35s ease;}
-  .acc-panel-inner{padding:0 4px 26px; color:var(--ink); font-size:.96rem;}
-  .acc-panel-inner p{margin:.5em 0;}
-  .acc-panel-inner ul{margin:.5em 0; padding-left:1.2em;}
-  .acc-panel-inner strong{color:var(--lake-deep);}
-  .note{
-    background:#FBF3E4; border-left:3px solid var(--amber); padding:12px 16px; border-radius:8px;
-    font-size:.9rem; margin-top:.8em;
-  }
-  .note.rust{background:#FBEDE9; border-color:var(--rust);}
-
-  /* addresses / good spots */
-  .spot{
-    background:var(--paper); border:1px solid var(--line); border-radius:16px; padding:22px 24px;
-    display:flex; flex-direction:column; gap:6px; height:100%;
-  }
-  .spot .cat{font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--rust);}
-  .spot h4{font-size:1.05rem; margin:.1em 0 .2em;}
-  .spot p{margin:0; font-size:.9rem; color:var(--peak);}
-  .spot a{font-size:.85rem; color:var(--lake-deep); font-weight:600;}
-
-  .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
-  .tag{
-    font-family:'IBM Plex Mono',monospace; font-size:.72rem; padding:5px 12px;
-    border:1px solid var(--line); border-radius:100px; color:var(--peak);
-  }
-
-  /* distances band */
-  .distances{display:flex; flex-wrap:wrap; gap:14px 30px; margin-top:8px;}
-  .distances div{display:flex; flex-direction:column; align-items:flex-start;}
-  .distances .km{font-family:'Fraunces',serif; font-size:1.7rem; color:var(--lake-deep);}
-  .distances .place{font-size:.82rem; color:var(--peak);}
-
-  /* activities */
-  .activity{
-    border-left:2px solid var(--lake-light); padding-left:18px; margin-bottom:24px; position:relative;
-  }
-  .activity::before{
-    content:""; position:absolute; left:-6px; top:4px; width:10px; height:10px; border-radius:50%;
-    background:var(--amber);
-  }
-  .activity h4{font-size:1.05rem; margin-bottom:.25em;}
-  .activity p{margin:0; color:var(--peak); font-size:.92rem;}
-  .activity a{font-size:.85rem;}
-
-  /* emergency */
-  .emergency{
-    background:var(--lake-deep); color:#fff; border-radius:20px; padding:40px;
-  }
-  .emergency h2{color:#fff;}
-  .em-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:20px;}
-  .em-item{
-    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); border-radius:14px;
-    padding:18px 20px;
-  }
-  .em-item .lbl{font-family:'IBM Plex Mono',monospace; font-size:.72rem; color:var(--amber); letter-spacing:.08em; text-transform:uppercase;}
-  .em-item .val{font-family:'Fraunces',serif; font-size:1.3rem; margin-top:4px;}
-  .em-item .sub{font-size:.82rem; color:rgba(255,255,255,0.7); margin-top:2px;}
-
-  footer{
-    background:var(--ink); color:rgba(255,255,255,0.7); padding:50px 0 34px; text-align:center; font-size:.85rem;
-  }
-  footer .signatures{color:var(--amber); font-size:1.3rem; margin-bottom:6px;}
-  footer a{color:#fff;}
-
-  /* responsive */
-  @media (max-width: 860px){
-    .links{display:none;}
-    .burger{display:block;}
-    .grid-2, .grid-3{grid-template-columns:1fr;}
-    .em-grid{grid-template-columns:1fr;}
-    section{padding:56px 0;}
-    .emergency{padding:28px;}
-  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0}
+  a{color:var(--accent,#b0603a);text-decoration:none}
+  a:hover{color:var(--accent-2,#5f7050)}
+  ::selection{background:var(--accent,#b0603a);color:#fff}
 </style>
 </head>
 <body>
+<div style="--bg:#eef2f3;--surface:#ffffff;--surface-2:#e5ecee;--ink:#1d2a31;--ink-2:#5a6b72;--line:#d9e2e4;--band:#e3ebed;--accent:#2c6b78;--accent-2:#9c7b3e;--on-accent:#f4fafb;--shadow:rgba(20,40,45,.12);--nav:rgba(255,255,255,.88);--font-display:'Cormorant Garamond';--font-head:'Marcellus';--font-body:'Mulish';background:var(--bg);color:var(--ink);font-family:var(--font-body),system-ui,sans-serif;min-height:100vh">
 
-<!-- ===================== NAV ===================== -->
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#accueil" class="brand">
-      <svg viewBox="0 0 40 30" fill="none"><path d="M2 26 L12 8 L18 18 L24 4 L38 26 Z" fill="#1C6E7D"/><path d="M2 26 L12 8 L18 18 L24 4 L38 26 Z" fill="#4FA8AE" opacity="0.5" transform="translate(0,4)"/></svg>
-      Chez les Somier
-    </a>
-    <ul class="links">
-      <li><a href="#region">La région</a></li>
-      <li><a href="#arriver">Arriver</a></li>
-      <li><a href="#maison">La maison</a></li>
-      <li><a href="#regles">Règles de vie</a></li>
-      <li><a href="#pratique">Infos pratiques</a></li>
-      <li><a href="#adresses">Bonnes adresses</a></li>
-      <li><a href="#activites">Activités</a></li>
-      <li><a href="#urgences">Urgences</a></li>
-    </ul>
-    <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
-  </div>
-</header>
-
-<div class="mobile-panel" id="mobilePanel">
-  <button class="close" id="closeBtn" aria-label="Fermer">&times;</button>
-  <ul>
-    <li><a href="#region"><span class="tag">01</span>La région</a></li>
-    <li><a href="#arriver"><span class="tag">02</span>Arriver chez nous</a></li>
-    <li><a href="#maison"><span class="tag">03</span>La maison</a></li>
-    <li><a href="#regles"><span class="tag">04</span>Règles de vie</a></li>
-    <li><a href="#pratique"><span class="tag">05</span>Infos pratiques</a></li>
-    <li><a href="#adresses"><span class="tag">06</span>Bonnes adresses</a></li>
-    <li><a href="#activites"><span class="tag">07</span>Activités</a></li>
-    <li><a href="#urgences"><span class="tag">08</span>Urgences</a></li>
-  </ul>
-</div>
-
-<!-- ===================== HERO ===================== -->
-<section class="hero" id="accueil">
-  <svg class="topo" viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#fff" fill="none" stroke-width="1">
-      <path d="M0,400 Q200,340 400,400 T800,400"/>
-      <path d="M0,350 Q200,290 400,350 T800,350"/>
-      <path d="M0,300 Q200,240 400,300 T800,300"/>
-      <path d="M0,250 Q200,190 400,250 T800,250"/>
-      <path d="M0,150 Q150,60 300,140 T600,120 T800,160"/>
-      <path d="M0,110 Q150,20 300,100 T600,80 T800,120"/>
-    </g>
-  </svg>
-  <div class="hero-inner">
-    <div class="eyebrow">Livret d'accueil · Allinges, Haute-Savoie</div>
-    <h1>Bienvenue <em>chez nous</em>,<br>bienvenue chez vous</h1>
-    <p class="lead">Ce petit guide rassemble tout ce qu'il faut savoir pour profiter au mieux de la maison, du quartier et de la région — entre lac Léman et sommets des Alpes.</p>
-    <div class="signatures">Ludovic, Laure, Chloé, Thibaut &amp; Raven</div>
-    <div class="hero-contact">
-      <a class="pill" href="tel:+33617624339">📱 SMS/WhatsApp Ludovic — 06 17 62 43 39</a>
-      <a class="pill" href="tel:+33621963381">📱 SMS/WhatsApp Laure — 06 21 96 33 81</a>
-      <a class="pill" href="mailto:ludovic.somier@gmail.com">✉️ ludovic.somier@gmail.com</a>
+  <!-- NAV -->
+  <header style="position:sticky;top:0;z-index:40;background:var(--nav,rgba(255,253,248,.88));backdrop-filter:blur(12px);border-bottom:1px solid var(--line,#e6d9c3)">
+    <div style="max-width:1120px;margin:0 auto;padding:0 22px;height:64px;display:flex;align-items:center;gap:20px">
+      <a href="#top" style="display:flex;align-items:center;gap:11px;flex:none">
+        <span style="position:relative;width:34px;height:34px;flex:none;display:block">
+          <span style="position:absolute;left:6px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent-2,#5f7050)"></span>
+          <span style="position:absolute;left:0;bottom:4px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:15px solid var(--accent,#b0603a)"></span>
+          <span style="position:absolute;left:11px;bottom:4px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:20px solid var(--ink,#2c241d)"></span>
+          <span style="position:absolute;left:0;bottom:0;width:34px;height:4px;border-radius:3px;background:var(--accent,#b0603a);opacity:.55"></span>
+        </span>
+        <span style="display:flex;flex-direction:column;line-height:1">
+          <span style="font-family:var(--font-head),serif;font-size:16px;color:var(--ink,#2c241d)">Le Cocon d'Allinges</span>
+          <span style="font:600 9.5px/1 var(--font-body),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b0603a);margin-top:3px">Livret d'accueil</span>
+        </span>
+      </a>
+      <nav data-nav style="margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch">
+        <a href="#arrivee" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">Arrivée & départ</a>
+        <a href="#ville" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">La ville & accès</a>
+        <a href="#regles" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">Règles</a>
+        <a href="#logement" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">Le logement</a>
+        <a href="#pratique" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">Infos pratiques</a>
+        <a href="#coeur" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">Coups de cœur</a>
+        <a href="#region" style="flex:none;padding:8px 12px;border-radius:9px;font:600 13px/1 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);white-space:nowrap">La région</a>
+      </nav>
     </div>
-  </div>
-  <!-- skyline signature -->
-  <svg class="skyline" viewBox="0 0 1200 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0,140 L120,70 L200,110 L300,40 L400,95 L520,55 L620,120 L720,60 L840,110 L960,50 L1080,100 L1200,70 L1200,160 L0,160 Z" fill="#F6F4EF"/>
-    <path d="M0,140 L120,70 L200,110 L300,40 L400,95 L520,55 L620,120 L720,60 L840,110 L960,50 L1080,100 L1200,70" fill="none" stroke="#E2A63B" stroke-width="2" opacity="0.6"/>
-  </svg>
-</section>
+  </header>
 
-<!-- ===================== LA RÉGION ===================== -->
-<section id="region">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">01</span>Notre ville</div>
-      <h2>Allinges, entre lac et montagnes</h2>
-      <p>Allinges est une commune de Haute-Savoie, à deux pas du lac Léman et de Thonon-les-Bains. Son histoire est liée à la Savoie et à la France, avec un monument emblématique : les Châteaux des Allinges.</p>
-    </div>
+  <span id="top"></span>
 
-    <div class="grid grid-3">
-      <div class="transport-card">
-        <div class="icon">✈️</div>
-        <h4>Avion</h4>
-        <p>Aéroport international de Genève (40 km)</p>
-        <p class="meta">Infos vols : +41 (0)900 57 15 00</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚆</div>
-        <h4>Train</h4>
-        <p>Gare SNCF de Thonon-les-Bains</p>
-        <p class="meta">Réservations : 3635 ou 0892 35 35 35</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">⛴️</div>
-        <h4>Bateau</h4>
-        <p>Compagnie Générale de Navigation — navettes Thonon–Lausanne et croisières</p>
-        <p class="meta">Billetterie : +33 (0)4 50 71 55 55</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚌</div>
-        <h4>Bus urbains thononais</h4>
-        <p>Lignes urbaines toute l'année</p>
-        <p class="meta">Infos : +33 (0)4 50 26 35 35</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚡</div>
-        <h4>Funiculaire</h4>
-        <p>Oct.–mai : 8h–12h30 / 13h30–18h30 · Mai–sept. : 8h–21h · Juil.–août : 8h–23h</p>
-        <p class="meta">Infos : +33 (0)4 50 71 21 54</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚲</div>
-        <h4>Vélos électriques</h4>
-        <p>Avril–octobre, via l'office de tourisme</p>
-        <p class="meta">Infos : +33 (0)4 50 71 55 55</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚕</div>
-        <h4>Taxis</h4>
-        <p>Allo Artisans (Centrale Taxis Thonon, 24h/24) · BLS Resort (transporteur privé)</p>
-        <p class="meta">04 50 71 07 00 · 06 32 04 63 52</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🅿️</div>
-        <h4>Parking</h4>
-        <p>Urbis Park</p>
-        <p class="meta">+33 (0)4 50 81 71 25</p>
-      </div>
-      <div class="transport-card">
-        <div class="icon">🚏</div>
-        <h4>Tous les transports</h4>
-        <p>Détail complet des lignes et horaires</p>
-        <p class="meta"><a href="https://allinges.fr/infos-utiles/transports/" target="_blank" rel="noopener">allinges.fr/infos-utiles/transports</a></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== ARRIVER CHEZ NOUS ===================== -->
-<section id="arriver" class="alt">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">02</span>Se rendre chez nous</div>
-      <h2>Arriver à la maison</h2>
-    </div>
-    <div class="grid grid-2">
-      <div class="card">
-        <h3 style="font-size:1.1rem;">📍 Adresse</h3>
-        <p>82 avenue du Centenaire<br>74200 Allinges</p>
-        <p>Nous ferons de notre mieux pour vous accueillir personnellement. Si ce n'est pas possible, les clés et la télécommande du garage vous attendront dans le pot de fleurs devant la porte d'entrée.</p>
-      </div>
-      <div class="card">
-        <h3 style="font-size:1.1rem;">🕐 Arrivée &amp; départ</h3>
-        <p><strong>À votre arrivée :</strong> tous les draps, serviettes et torchons sont changés. Nos effets personnels restent dans notre bureau — merci de laisser cette pièce fermée.</p>
-        <p><strong>À votre départ :</strong> faites le ménage de départ, videz les poubelles, laissez le linge au sol dans la buanderie, videz le frigo/congélateur, et rangez terrasse et plancha.</p>
-        <p class="note">Si personne ne peut récupérer les clés à votre départ, indiquez-nous votre horaire — vous pourrez les déposer dans notre boîte aux lettres avec notre accord.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== LA MAISON ===================== -->
-<section id="maison">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">03</span>La vie dans le logement</div>
-      <h2>Équipements de la maison</h2>
-      <p>Cliquez sur chaque pièce pour voir les infos utiles.</p>
-    </div>
-
-    <div class="accordion" id="accEquip">
-      <div class="acc-item open">
-        <button class="acc-trigger">🛋️ Salon / salle à manger</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p><strong>WiFi Fibre</strong> — Réseau : <code>SL-Guest-Network</code> · Mot de passe : <code>$0m13rGUEST</code></p>
-            <p>TV : chaînes via la box, avec accès Netflix et Amazon Prime (films gratuits inclus). Pour la VOD payante, merci d'utiliser votre propre carte bancaire.</p>
-            <p>Télécommande blanche = téléviseur Samsung · Télécommande noire = box Orange TV. Sélectionnez l'icône Orange sur la télécommande Samsung pour accéder aux chaînes.</p>
-          </div>
+  <!-- HERO -->
+  <section style="position:relative;overflow:hidden;background:var(--band,#ece0cd)">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 26px,var(--surface-2,#f1e7d6) 26px 27px);opacity:.5"></div>
+    <div style="position:relative;max-width:1120px;margin:0 auto;padding:64px 22px 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center">
+      <div>
+        <span style="font:600 12px/1 var(--font-body),sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--accent,#b0603a)">Haute-Savoie · Allinges · Lac Léman</span>
+        <h1 style="font-family:var(--font-display),serif;font-weight:500;font-size:clamp(42px,6vw,72px);line-height:1.02;color:var(--ink,#2c241d);margin:16px 0 0">Bienvenue<br>en Haute-Savoie</h1>
+        <p style="max-width:44ch;margin:20px 0 0;font:400 17px/1.65 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Chers vacanciers, ce petit livret réunit tout ce qu'il faut savoir pour un séjour serein : le fonctionnement de la maison, nos quelques règles, et nos meilleures adresses de la région.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px">
+          <a href="#arrivee" style="display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:11px;background:var(--accent,#b0603a);color:var(--on-accent,#fff8ef);font:700 14px/1 var(--font-body),sans-serif">Arrivée & départ →</a>
+          <a href="#logement" style="display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:11px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);color:var(--ink,#2c241d);font:700 14px/1 var(--font-body),sans-serif">WiFi & équipements</a>
         </div>
       </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🍳 Cuisine</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Sous-plats dans le tiroir des poêles et casseroles pour les plats chauds. Essuie-mains et essuie-vaisselle au-dessus du micro-ondes. Produits vaisselle sous le lavabo, éponges/lavettes lavables en machine.</p>
-            <p><strong>Produits d'entretien :</strong> Décapant Briochin (dégraissant électroménager), Nettoyant Universel Briochin (surfaces), Action bleu (calcaire robinetterie), W5 spray javel (évier). Une pierre de nettoyage pour les plaques à induction est aussi disponible.</p>
-            <p>Appareils à raclette, fondue, pierrade et crêpe-partie rangés au sous-sol.</p>
-            <div class="note">Ce que vous utilisez (produit vaisselle, lave-vaisselle, lessive, papier toilette, sel/poivre/huile/épices) n'a pas besoin d'être remplacé — dites-le-nous si ça ne vous convient pas.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🛏️ Chambres</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Draps propres installés sur tous les lits à votre arrivée. La TV du sous-sol donne accès à Netflix et Amazon Prime uniquement.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🚿 Sanitaires</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Éponges de salle de bain sous le vasque des toilettes et dans le panier blanc du meuble de rangement (lavables en machine). Lingettes à usage unique à jeter à la poubelle.</p>
-            <div class="note rust">Rien dans les WC, même les lingettes biodégradables.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🌿 Extérieurs</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Plancha : nettoyer avec le produit dédié (à côté de l'évier au sous-sol) puis repasser au produit vaisselle pour enlever le film gras. Une seconde bonbonne de gaz pleine est disponible sous la plancha.</p>
-            <p>Rangez la plancha et les coussins du salon de jardin dans le cabanon, repliez le parasol après usage. Nappes disponibles en haut du placard de l'entrée.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🧺 Garde-manger &amp; activités extérieures</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Produits de première nécessité disponibles dans placards, cagibi et congélateur — merci de les remplacer à votre départ.</p>
-            <p>Au sous-sol : transats de plage, glacières, chaises pliables, table d'appoint, luges... N'hésitez pas à fouiller !</p>
-            <p>Cartes rechargeables MultiPass disponibles dans le panier d'accueil pour les randonnées et remontées mécaniques des Portes du Soleil (rechargement payant aux guichets). Merci de nous les laisser à votre départ.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🧹 Entretien</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Aspirateur sans sac dans la buanderie (à vider avant votre départ) et serpillère lavable en machine. Produits ménagers dans la caisse rouge de la buanderie.</p>
-            <p>Étendoir pliable, table à repasser et centrale vapeur également dans la buanderie.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">☀️ Bon à savoir</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p>Fortes chaleurs : fermez volets et baie vitrée du salon le matin, ceux de la cuisine et des chambres l'après-midi, et aérez au maximum la nuit.</p>
-            <p>Le nombre de draps et serviettes fournis correspond au nombre de personnes du séjour — prévenez-nous si vous en avez besoin de plus.</p>
-            <p>L'eau du robinet est potable, mais pensez à désactiver l'adoucisseur avant de remplir vos bouteilles. Des fontaines d'eau potable sont disponibles dans toute la ville de Thonon (pensez à vos gourdes), ainsi que des WC publics, notamment au parc de la Châtaigneraie à Saint-Disdille.</p>
-          </div>
-        </div>
+      <div style="aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid var(--line,#e6d9c3);box-shadow:0 20px 50px -20px var(--shadow,rgba(60,42,24,.35))">
+        <img src="img/IMG_4561.jpg" alt="Façade / vue de la maison" style="width:100%;height:100%;object-fit:cover;display:block">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===================== RÈGLES DE VIE ===================== -->
-<section id="regles" class="alt">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">04</span>Pour un séjour serein</div>
-      <h2>Règles de vie</h2>
-      <p>Pour le bon déroulement de votre séjour, et de celui des personnes qui vous succéderont.</p>
+  <!-- LE MOT + CONTACTS -->
+  <section style="max-width:1120px;margin:0 auto;padding:56px 22px 0">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:start">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:18px;padding:32px 34px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent,#b0603a)">Le mot des propriétaires</span>
+        <p style="margin:16px 0 0;font:400 16px/1.7 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Nous vous souhaitons la bienvenue chez nous — chez vous ! Nous étofferons ce livret au fil de nos échanges, alors n'hésitez pas à nous laisser vos remarques. Nous restons à votre disposition pour tout renseignement complémentaire, et vous souhaitons un agréable séjour en Haute-Savoie.</p>
+        <p style="margin:20px 0 0;font-family:var(--font-display),serif;font-size:26px;color:var(--accent,#b0603a)">Ludovic, Laure, Chloé, Thibaut & Raven</p>
+      </div>
+      <div style="background:var(--ink,#2c241d);border-radius:18px;padding:28px 28px;color:var(--on-accent,#fff8ef);box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2,#5f7050);filter:brightness(1.5)">Nous joindre</span>
+        <p style="margin:14px 0 4px;font:600 12px/1 var(--font-body),sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.6">SMS / WhatsApp</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a style="color:var(--on-accent,#fff8ef);font:600 17px/1.3 var(--font-body),sans-serif;display:flex;justify-content:space-between;gap:12px">06 17 62 43 39 <span style="opacity:.55;font-weight:400">Ludovic</span></a>
+          <a style="color:var(--on-accent,#fff8ef);font:600 17px/1.3 var(--font-body),sans-serif;display:flex;justify-content:space-between;gap:12px">06 21 96 33 81 <span style="opacity:.55;font-weight:400">Laure</span></a>
+        </div>
+        <p style="margin:18px 0 4px;font:600 12px/1 var(--font-body),sans-serif;letter-spacing:.1em;text-transform:uppercase;opacity:.6">E-mail</p>
+        <a href="mailto:ludovic.somier@gmail.com" style="color:var(--on-accent,#fff8ef);font:600 15px/1.3 var(--font-body),sans-serif;word-break:break-all">ludovic.somier@gmail.com</a>
+      </div>
     </div>
-    <div class="grid grid-2">
-      <div class="card">
-        <ul style="margin:0; padding-left:1.2em;">
-          <li>Merci de ne pas fumer à l'intérieur.</li>
-          <li>Ne laissez jamais vos jeunes enfants divaguer sans surveillance.</li>
-          <li>Merci d'éviter de faire du bruit après 21h30, par respect pour le voisinage.</li>
-          <li>Merci d'éviter de prendre vos repas sur le canapé.</li>
-          <li>Mesdames, merci de jeter serviettes hygiéniques et tampons à la poubelle (sachets disponibles dans les meubles de la salle de bain), pas dans les toilettes.</li>
+  </section>
+
+  <!-- ARRIVÉE & DÉPART -->
+  <section id="arrivee" style="scroll-margin-top:80px;max-width:1120px;margin:0 auto;padding:64px 22px 0">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+      <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">01</span>
+      <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+    </div>
+    <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 6px">Arrivée & départ</h2>
+    <p style="margin:0 0 26px;font:400 16px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);max-width:60ch">Nous ferons de notre mieux pour vous accueillir en personne. Le plus important à retenir avant de partir se trouve ici.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-top:4px solid var(--accent-2,#5f7050);border-radius:16px;padding:26px 28px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:22px;color:var(--ink,#2c241d);margin:0 0 14px">À votre arrivée</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent-2,#5f7050);font-weight:700">✓</span> Draps, serviettes et torchons sont changés et propres à votre arrivée.</li>
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent-2,#5f7050);font-weight:700">✓</span> Notre bureau contient nos effets personnels : merci de le laisser fermé.</li>
         </ul>
       </div>
-      <div class="card">
-        <p>En cas de tache sur le tapis ou le canapé : savon de Marseille (tiroir de la buanderie), un chiffon et de l'huile de coude. Un nettoyeur spécial est aussi disponible dans la buanderie.</p>
-        <p>Nous demandons simplement à nos visiteurs de gérer notre cocon « en bon père de famille » — une expression un peu désuète, mais qui nous plaît.</p>
-        <div class="note rust">Le ramassage des ordures ménagères n'existe plus dans le quartier : les containers à poubelles et recyclage se trouvent devant l'école élémentaire. Merci de nous signaler immédiatement tout dysfonctionnement ou casse.</div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-top:4px solid var(--accent,#b0603a);border-radius:16px;padding:26px 28px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:22px;color:var(--ink,#2c241d);margin:0 0 14px">À votre départ</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent,#b0603a);font-weight:700">›</span> Un ménage de départ, pour retrouver la maison comme vous l'avez trouvée.</li>
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent,#b0603a);font-weight:700">›</span> Vider les poubelles, nettoyer et ranger la vaisselle.</li>
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent,#b0603a);font-weight:700">›</span> Laisser le linge de lit et les serviettes au sol dans la buanderie — on s'en occupe.</li>
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent,#b0603a);font-weight:700">›</span> Retirer votre nourriture du réfrigérateur et du congélateur.</li>
+          <li style="display:flex;gap:11px;font:400 15px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><span style="color:var(--accent,#b0603a);font-weight:700">›</span> Ranger la terrasse et la plancha.</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ===================== INFOS PRATIQUES ===================== -->
-<section id="pratique">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">05</span>Au quotidien</div>
-      <h2>Infos pratiques</h2>
+    <div style="margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div style="background:var(--surface-2,#f1e7d6);border-radius:16px;padding:22px 26px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="width:30px;height:30px;border-radius:8px;background:var(--accent,#b0603a);color:var(--on-accent,#fff8ef);display:flex;align-items:center;justify-content:center;font-size:15px">🔑</span><h4 style="margin:0;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Les clés</h4></div>
+        <p style="margin:0;font:400 14.5px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">En cas d'absence à votre arrivée, les clés et la télécommande du garage seront déposées dans le pot de fleurs devant la porte d'entrée.</p>
+      </div>
+      <div style="background:var(--surface-2,#f1e7d6);border-radius:16px;padding:22px 26px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><span style="width:30px;height:30px;border-radius:8px;background:var(--ink,#2c241d);color:var(--on-accent,#fff8ef);display:flex;align-items:center;justify-content:center;font-size:15px">📮</span><h4 style="margin:0;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Départ sans nous</h4></div>
+        <p style="margin:0;font:400 14.5px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Indiquez-nous votre horaire de départ, signalez tout souci, et déposez les clés + télécommande dans la boîte aux lettres (avec notre accord).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- LA VILLE & ACCÈS -->
+  <section id="ville" style="scroll-margin-top:80px;max-width:1120px;margin:0 auto;padding:64px 22px 0">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+      <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">02</span>
+      <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+    </div>
+    <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 6px">Notre ville & comment venir</h2>
+    <p style="margin:0 0 26px;font:400 16px/1.66 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);max-width:64ch">Allinges est une commune de Haute-Savoie, à deux pas du lac Léman et de Thonon-les-Bains, riche d'histoire savoyarde avec ses fameux Châteaux des Allinges.</p>
+
+    <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 28px;margin-bottom:20px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+      <div style="flex:1;min-width:220px">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b0603a)">Se rendre chez nous</span>
+        <p style="margin:8px 0 0;font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d)">82 avenue du Centenaire, 74200 Allinges</p>
+      </div>
+      <button onclick="copyText('82 avenue du Centenaire, 74200 Allinges','Adresse copiée ✓')" style="cursor:pointer;padding:11px 18px;border-radius:10px;background:var(--ink,#2c241d);color:var(--on-accent,#fff8ef);border:none;font:700 13px/1 var(--font-body),sans-serif">Copier l'adresse</button>
+      <a href="https://www.google.com/maps/search/?api=1&query=82+avenue+du+Centenaire+74200+Allinges" target="_blank" rel="noopener" style="padding:11px 18px;border-radius:10px;background:var(--surface-2,#f1e7d6);color:var(--ink,#2c241d);font:700 13px/1 var(--font-body),sans-serif">Ouvrir dans Maps ↗</a>
     </div>
 
-    <div class="accordion" id="accPratique">
-      <div class="acc-item open">
-        <button class="acc-trigger">🛒 Où faire ses courses ?</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p><strong>Intermarché</strong> (1,3 km) — 157 Rte des Blaves, 74200 Allinges · lun–sam 8h30–19h30, dim 8h30–12h30</p>
-            <p><strong>Hyper U Amphion</strong> (9,3 km) — RD 1005 Amphion, 74500 Publier · zone commerciale avec Sport 2000, Cultura, Decathlon, V&amp;B...</p>
-            <p><strong>Lidl Margencel</strong> (7 km) — 37 Av. Pré Robert S, 74200 Anthy-sur-Léman · lun–sam 8h30–19h30</p>
-            <p><strong>Grand Frais Thonon</strong> (6,7 km) — 6 Rue Amédée de Foras, 74200 Thonon-les-Bains</p>
-            <p><strong>Carrefour Margencel</strong> (7 km) — route de Genève, Espace Léman 2, 74200 Margencel</p>
-          </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font-size:22px">✈️</span>
+        <h4 style="margin:6px 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Avion — Genève (40 km)</h4>
+        <p style="margin:0;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Aéroport international de Genève. Infos vols : +41 (0)900 57 15 00</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font-size:22px">🚆</span>
+        <h4 style="margin:6px 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Train — Thonon-les-Bains</h4>
+        <p style="margin:0;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Gare SNCF de Thonon. Réservations : 3635 ou 0892 35 35 35</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font-size:22px">⛴️</span>
+        <h4 style="margin:6px 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Bateau — CGN</h4>
+        <p style="margin:0;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Navettes Thonon–Lausanne & croisières. Office de tourisme : +33 (0)4 50 71 55 55</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font-size:22px">🚌</span>
+        <h4 style="margin:6px 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Transports routiers</h4>
+        <p style="margin:0;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)"><a href="https://allinges.fr/infos-utiles/transports/" target="_blank" rel="noopener">allinges.fr — transports ↗</a></p>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-head),serif;font-size:24px;color:var(--ink,#2c241d);margin:34px 0 16px">Circuler dans Thonon</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h4 style="margin:0 0 8px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">🚏 Bus urbains (BUT)</h4>
+        <p style="margin:0;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Lignes urbaines toute l'année. Infos : +33 (0)4 50 26 35 35</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h4 style="margin:0 0 8px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">🚡 Funiculaire</h4>
+        <p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)"><strong>Oct.–Mai :</strong> lun–sam 8h–12h30 / 13h30–18h30 ; dim & fériés 10h–12h30 / 14h–18h.<br><strong>Mai, juin, sept. :</strong> 8h–21h.<br><strong>Juil.–août :</strong> 8h–23h. Infos : +33 (0)4 50 71 21 54</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h4 style="margin:0 0 8px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">🚲 Vélos électriques</h4>
+        <p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Via l'office de tourisme. Avril–oct : lun–sam 9h–12h15 / 13h45–18h30. Été (mi-juin à mi-sept) : 9h–18h30. Infos : +33 (0)4 50 71 55 55</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h4 style="margin:0 0 8px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">🚕 Taxis & parkings</h4>
+        <p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Centrale Taxis Thonon (24/7) : +33 (0)4 50 71 07 00.<br>BLS Resort (privé) : +33 (0)6 32 04 63 52.<br>Urbis Park : +33 (0)4 50 81 71 25</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÈGLES -->
+  <section id="regles" style="scroll-margin-top:80px;margin-top:64px;background:var(--band,#ece0cd)">
+    <div style="max-width:1120px;margin:0 auto;padding:56px 22px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+        <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">03</span>
+        <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+      </div>
+      <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 6px">Règles de vie</h2>
+      <p style="margin:0 0 26px;font:400 16px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);max-width:62ch">Pour le bon déroulement de votre séjour et de celui des personnes qui vous succéderont, merci d'avance de gérer notre cocon « en bon père de famille » — une expression désuète mais que nous trouvons jolie.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px">
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">🚭 Ne pas fumer à l'intérieur.</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">👧 Ne jamais laisser les jeunes enfants sans surveillance.</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">🚽 Mesdames : serviettes et tampons à la poubelle, jamais dans les WC (sachets dans les meubles de SdB).</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">🌙 Respecter le voisinage : éviter le bruit après 21h30.</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">🛋️ Éviter de manger sur le canapé. En cas de tache : savon de Marseille (tiroir buanderie) + chiffon, ou le nettoyeur spécial de la buanderie.</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:14px;padding:18px 20px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)">♻️ Plus de ramassage des ordures : conteneurs poubelles et recyclage devant l'école élémentaire.</div>
+      </div>
+      <div style="margin-top:16px;background:var(--accent,#b0603a);color:var(--on-accent,#fff8ef);border-radius:14px;padding:18px 24px;text-align:center;font:700 15px/1.4 var(--font-body),sans-serif;letter-spacing:.02em">Merci de nous signaler immédiatement tout dysfonctionnement ou toute casse.</div>
+    </div>
+  </section>
+
+  <!-- LE LOGEMENT -->
+  <section id="logement" style="scroll-margin-top:80px;max-width:1120px;margin:0 auto;padding:64px 22px 0">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+      <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">04</span>
+      <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+    </div>
+    <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 26px">La vie dans le logement</h2>
+
+    <!-- WIFI HERO CARD -->
+    <div style="background:var(--ink,#2c241d);border-radius:18px;padding:30px 32px;color:var(--on-accent,#fff8ef);display:grid;grid-template-columns:1fr 1fr;gap:24px;box-shadow:0 12px 30px -18px var(--shadow,rgba(60,42,24,.5))">
+      <div>
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2,#5f7050);filter:brightness(1.6)">Internet Fibre</span>
+        <p style="margin:12px 0 4px;font:500 12px/1 var(--font-body),sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.55">Nom du réseau</p>
+        <p style="margin:0;font:600 22px/1.2 var(--font-body),sans-serif">SL-Guest-Network</p>
+        <p style="margin:18px 0 4px;font:500 12px/1 var(--font-body),sans-serif;letter-spacing:.08em;text-transform:uppercase;opacity:.55">Clé WiFi</p>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <code style="font:600 22px/1.2 ui-monospace,Menlo,monospace;letter-spacing:.02em">$0m13rGUEST</code>
+          <button onclick="copyText('$0m13rGUEST','Clé WiFi copiée ✓')" style="cursor:pointer;padding:8px 14px;border-radius:9px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:var(--on-accent,#fff8ef);font:600 13px/1 var(--font-body),sans-serif">Copier</button>
+        </div>
+      </div>
+      <div style="border-left:1px solid rgba(255,255,255,.14);padding-left:24px">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-2,#5f7050);filter:brightness(1.6)">Télévision</span>
+        <ul style="margin:12px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font:400 14.5px/1.5 var(--font-body),sans-serif">
+          <li style="display:flex;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#fff;flex:none;margin-top:4px"></span> Télécommande <strong>blanche</strong> : téléviseur Samsung</li>
+          <li style="display:flex;gap:10px"><span style="width:11px;height:11px;border-radius:3px;background:#111;border:1px solid #555;flex:none;margin-top:4px"></span> Télécommande <strong>noire</strong> : Box Orange TV</li>
+          <li style="opacity:.8">Sélectionnez l'icône Orange avec la télécommande Samsung pour les chaînes. Netflix & Amazon Prime disponibles. Pour la VOD, merci d'utiliser votre propre carte de paiement.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EQUIPEMENT CARDS -->
+    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px">
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Cuisine</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Sous-plats dans le tiroir des poêles pour les plats chauds. Essuie-mains et essuie-vaisselle dans le meuble au-dessus du micro-ondes ; produits vaisselle sous le lavabo. Éponges et lavettes de l'évier lavables en machine. Appareils à raclette, fondue, pierrade et crêpe-partie au sous-sol.</p>
+        <p style="margin:12px 0 0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)"><strong style="color:var(--accent,#b0603a)">Produits :</strong> Décapant Briochin (électroménager), Nettoyant Universel Briochin (surfaces), Action bleu (calcaire), W5 spray javel (évier), pierre de nettoyage pour les plaques induction.</p>
+        <p style="margin:12px 0 0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Pas besoin de remplacer ce que vous consommez ici (produit vaisselle/lave-vaisselle, lessive, papier toilette, sel, poivre, huile, épices) — nous ferons de même chez vous.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Buanderie & lessive</h3>
+        <div style="background:var(--surface-2,#f1e7d6);border-radius:11px;padding:12px 14px;margin-bottom:12px;font:600 13.5px/1.5 var(--font-body),sans-serif;color:var(--accent,#b0603a)">⚠️ Merci de ne pas utiliser d'adoucissant : nos enfants ont des peaux atopiques et le moindre résidu peut déclencher de l'eczéma.</div>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Nous avons un adoucisseur d'eau : pensez à utiliser moins de lessive. Aspirateur sans sac dans la buanderie (à vider au départ), serpillère lavable en machine, étendoir pliable, table à repasser et centrale vapeur. Produits ménagers dans la caisse rouge.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Chambres</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Draps propres sur tous les lits à votre arrivée. La TV du sous-sol donne accès à Netflix et Amazon Prime uniquement. Nous fournissons draps et serviettes selon le nombre de personnes — prévenez-nous si besoin de plus.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Sanitaires</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Éponges de salle de bain dans le meuble sous vasque et le panier blanc (lavables en machine). Pour les WC, nous utilisons des lingettes à usage unique <strong>à jeter à la poubelle</strong> : merci de ne rien jeter dans les toilettes, pas même les lingettes biodégradables.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Extérieurs & plancha</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">La plancha se nettoie avec le produit dédié (près de l'évier au sous-sol), puis un dernier passage au produit vaisselle pour retirer la pellicule grasse. Une seconde bonbonne de gaz pleine est disponible dessous. Rangez la plancha et les coussins du salon de jardin dans le cabanon, repliez le parasol après usage. Nappes en haut du placard de l'entrée.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Garde-manger</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Servez-vous des produits de première nécessité dans les placards, le cagibi et le congélateur — nous vous demandons simplement de les remplacer à votre départ.</p>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Activités extérieures</h3>
+        <p style="margin:0;font:400 14.5px/1.62 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Dans la pièce en bois du sous-sol : transats de plage, glacières, chaises pliables, table d'appoint, luges… fouillez sans hésiter !</p>
+        <div style="background:var(--surface-2,#f1e7d6);border-radius:11px;padding:12px 14px;margin-top:12px;font:400 13.5px/1.55 var(--font-body),sans-serif;color:var(--ink,#2c241d)"><strong style="color:var(--accent,#b0603a)">MultiPass :</strong> nos cartes rechargeables sont dans le panier d'accueil (randonnées & remontées mécaniques des Portes du Soleil). À recharger au guichet. Merci de nous les laisser au départ.</div>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">Bon à savoir</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px;font:400 14.5px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+          <li>☀️ Fortes chaleurs : fermez volets et baie du salon le matin, cuisine et chambres l'après-midi, aérez la nuit.</li>
+          <li>💧 L'eau du robinet est potable — désactivez l'adoucisseur avant de remplir vos bouteilles.</li>
+          <li>⛲ Fontaines d'eau potable et WC publics dans tout Thonon (parc de la Châtaigneraie à Saint-Disdille).</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFOS PRATIQUES -->
+  <section id="pratique" style="scroll-margin-top:80px;max-width:1120px;margin:0 auto;padding:64px 22px 0">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+      <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">05</span>
+      <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+    </div>
+    <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 26px">Informations pratiques</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 14px">🛒 Où faire ses courses ?</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px;font:400 14px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+          <li><strong style="color:var(--ink,#2c241d)">Intermarché</strong> · 1,3 km — 157 Rte des Blaves, Allinges. Lun–sam 8h30–19h30, dim 8h30–12h30.</li>
+          <li><strong style="color:var(--ink,#2c241d)">Hyper U Amphion</strong> · 9,3 km — zone commerciale (drive, Sport 2000, Cultura, Decathlon, V&B…).</li>
+          <li><strong style="color:var(--ink,#2c241d)">Lidl Margencel</strong> · 7 km — Anthy-sur-Léman. Lun–sam 8h30–19h30.</li>
+          <li><strong style="color:var(--ink,#2c241d)">Grand Frais</strong> · 6,7 km — 6 rue Amédée de Foras, Thonon.</li>
+          <li><strong style="color:var(--ink,#2c241d)">Carrefour Margencel</strong> · 7 km — Espace Léman 2, Margencel.</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 14px">⛽ Carburant</h3>
+        <ul style="margin:0 0 22px;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font:400 14px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+          <li><strong style="color:var(--ink,#2c241d)">Intermarché Allinges</strong> — 157 Rte des Blaves, 74200 Allinges</li>
+          <li><strong style="color:var(--ink,#2c241d)">Carburauto</strong> — 930 av. de Thonon, 74200 Allinges</li>
+        </ul>
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 14px">🥖 Boulangeries</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;font:400 14px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+          <li><strong style="color:var(--ink,#2c241d)">Pains et Gourmandises</strong> · 700 m — 535 av. de Thonon, Allinges</li>
+          <li><strong style="color:var(--ink,#2c241d)">Le Fournil du Chablais</strong> — 13 av. de la Dranse, Thonon</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:24px 26px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 14px">🩺 Où se faire soigner ?</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+          <li><strong style="color:var(--ink,#2c241d)">Urgent Care — CMC (traumatologie)</strong><br>Sans RDV : lun–ven dès 8h30, sam 8h30–12h. 106 chemin de Morcy, Thonon · <a href="tel:+33450171770">04 50 17 17 70</a></li>
+          <li><strong style="color:var(--ink,#2c241d)">Hôpitaux du Léman — G. Pianta</strong><br>3 av. de la Dame, Thonon · <a href="tel:+33450832000">04 50 83 20 00</a></li>
+          <li><strong style="color:var(--ink,#2c241d)">SOS Médecins</strong> — visites 24/7 sur RDV : <a href="tel:3624">3624</a> ou 04 50 73 63 34</li>
+          <li><strong style="color:var(--ink,#2c241d)">Vétérinaire — Cabinet des 5 éléments</strong><br>32 av. Jules Ferry, Thonon · Urgences : <a href="tel:+33450709331">04 50 70 93 31</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NUMEROS UTILES -->
+    <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+      <div style="background:var(--accent,#b0603a);color:var(--on-accent,#fff8ef);border-radius:16px;padding:22px 24px">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.16em;text-transform:uppercase;opacity:.75">Urgences</span>
+        <p style="margin:8px 0 0;font-family:var(--font-head),serif;font-size:38px;line-height:1">112</p>
+        <p style="margin:6px 0 0;font:400 13px/1.4 var(--font-body),sans-serif;opacity:.85">Numéro d'urgence européen</p>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b0603a)">Les propriétaires</span>
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;font:600 16px/1.3 var(--font-body),sans-serif;color:var(--ink,#2c241d)">
+          <a style="color:var(--ink,#2c241d)">06 21 96 33 81 · Laure</a>
+          <a style="color:var(--ink,#2c241d)">06 17 62 43 39 · Ludovic</a>
+        </div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <span style="font:600 11px/1 var(--font-body),sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent,#b0603a)">Office de tourisme</span>
+        <p style="margin:10px 0 0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)"><strong style="color:var(--ink,#2c241d)">Château de Sonnaz</strong> — nov.–mars lun–sam 9h–12h15 / 13h45–17h30 · +33 (0)4 50 71 55 55.<br>Kiosque du Port de Rives (mi-juin à mi-sept) : 10h–18h30.</p>
+      </div>
+    </div>
+
+    <!-- MARCHES -->
+    <div style="margin-top:14px;background:var(--surface-2,#f1e7d6);border-radius:16px;padding:24px 28px">
+      <h3 style="font-family:var(--font-head),serif;font-size:20px;color:var(--ink,#2c241d);margin:0 0 12px">🧺 Les marchés</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">
+        <p style="margin:0"><strong style="color:var(--ink,#2c241d)">Thonon-les-Bains</strong><br>Lundi, jeudi & dimanche. Vendredi soir : nocturnes chablaisiennes (18h, tout l'été). Marché d'art jeu/ven/dim de mai à sept.</p>
+        <p style="margin:0"><strong style="color:var(--ink,#2c241d)">Évian-les-Bains</strong><br>Mardi & vendredi, rue du Lac.</p>
+        <p style="margin:0"><strong style="color:var(--ink,#2c241d)">Douvaine</strong><br>Dimanche, place de la mairie.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUPS DE COEUR -->
+  <section id="coeur" style="scroll-margin-top:80px;margin-top:64px;background:var(--band,#ece0cd)">
+    <div style="max-width:1120px;margin:0 auto;padding:56px 22px">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+        <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">06</span>
+        <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+      </div>
+      <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 6px">Nos coups de cœur</h2>
+      <p style="margin:0 0 26px;font:400 16px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f);max-width:60ch">Nos adresses préférées pour bien manger, boire et faire le plein de bons produits du Chablais.</p>
+
+      <h3 style="font-family:var(--font-head),serif;font-size:23px;color:var(--ink,#2c241d);margin:0 0 14px">🍽️ Restaurants</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:30px">
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">L'Étable du Savoyard</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Fondue savoyarde et spécialités de la région. 98 av. de Saint-Disdille, Thonon · <a href="tel:+33450710556">04 50 71 05 56</a></p>
+        </div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Les Cygnes — Chez Jules</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">La fameuse recette des filets de perches, accueil chaleureux. Port de Sechex, Margencel · <a href="tel:+33450726310">04 50 72 63 10</a></p>
+        </div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Tibetan Café</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Gastronomie d'ailleurs, terrasse les pieds dans l'eau et panorama du Léman. Grande-Rive, Évian · <a href="tel:+33450388274">04 50 38 82 74</a></p>
+        </div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Le Kern <span style="font-size:12px;color:var(--accent,#b0603a)">★ étoilé</span></h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Menu surprise à prix abordable. 393 rte de la Tassonnière, Seytroux · <a href="tel:+33450847089">04 50 84 70 89</a> · <a href="https://restaurant-kern.fr/" target="_blank" rel="noopener">site ↗</a></p>
+        </div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">Hôtel de la Plage — Excenevex</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Vue incroyable et accès à la seule plage de sable naturelle du Léman. Excenevex · <a href="tel:+33450728112">04 50 72 81 12</a> · <a href="https://www.hoteldelaplage-excenevex.com/fr" target="_blank" rel="noopener">site ↗</a></p>
         </div>
       </div>
 
-      <div class="acc-item">
-        <button class="acc-trigger">⛽ Où prendre du carburant ?</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p><strong>Intermarché Allinges</strong> — 157 Rte des Blaves, 74200 Allinges</p>
-            <p><strong>Carburauto</strong> — 930 Av. de Thonon, 74200 Allinges</p>
-          </div>
+      <h3 style="font-family:var(--font-head),serif;font-size:23px;color:var(--ink,#2c241d);margin:0 0 14px">🧀 Bonnes tables & terroir</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">🍷 Cave V and B</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">350 bières, 300 vins, whiskies et rhums du monde. Coup de cœur : les bières du Mont-Blanc aromatisées. <a href="https://vandb.fr/" target="_blank" rel="noopener">vandb.fr ↗</a></p>
         </div>
-      </div>
-
-      <div class="acc-item">
-        <button class="acc-trigger">🏥 Où se faire soigner ?</button>
-        <div class="acc-panel">
-          <div class="acc-panel-inner">
-            <p><strong>Urgent Care — Traumatologie (CMC)</strong> : sans rendez-vous, pour petites urgences (entorses, fractures, plaies, brûlures...). Lun–ven dès 8h30 en continu, sam matin 8h30–12h (selon affluence). 106 Chemin de Morçy, 74200 Thonon-les-Bains · 04 50 17 17 70</p>
-            <p><strong>Hôpitaux du Léman</strong> — Site Georges Pianta, 3 avenue de la Dame, 74203 Thonon-les-Bains · 04 50 83 20 00</p>
-            <p><strong>SOS Médecins</strong> — visites à domicile 24h/24, 7j/7 sur RDV téléphonique au 3624 ou 04 50 73 63 34</p>
-            <p><strong>Vétérinaire</strong> — Cabinet des 5 éléments, 32 Av. Jules Ferry, 74200 Thonon-les-Bains · urgences 04 50 70 93 31</p>
-          </div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">🧀 Fromagerie du Noyer</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Évian & Thonon (8 Grande Rue · 04 50 81 35 02). Coup de cœur : saucisson au beaufort et raclette forestière.</p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== BONNES ADRESSES ===================== -->
-<section id="adresses" class="alt">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">06</span>Nos coups de cœur</div>
-      <h2>Bonnes adresses locales</h2>
-    </div>
-
-    <h3 style="font-size:1.1rem; margin-bottom:14px;">🍽️ Restaurants</h3>
-    <div class="grid grid-3" style="margin-bottom:40px;">
-      <div class="spot">
-        <span class="cat">Fondue savoyarde</span>
-        <h4>L'Étable du Savoyard</h4>
-        <p>98 avenue de Saint-Disdille, 74200 Thonon-les-Bains</p>
-        <p>Tél. 04 50 71 05 56</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Filets de perche</span>
-        <h4>Les Cygnes — Chez Jules</h4>
-        <p>4 route des Mouettes, Port de Séchex, 74200 Margencel</p>
-        <p>Tél. 04 50 72 63 10</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Vue sur le lac</span>
-        <h4>Tibetan Café</h4>
-        <p>Terrasse les pieds dans l'eau, panorama sur le Léman</p>
-        <p>120 rue du Lac, Grande-Rive Neuvecelle, 74500 Évian-les-Bains · 04 50 38 82 74</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Étoilé</span>
-        <h4>Le Kern</h4>
-        <p>Menu surprise à prix abordable (~100 €)</p>
-        <p>393 Rte de la Tassonnière, 74430 Seytroux · 04 50 84 70 89</p>
-        <a href="https://restaurant-kern.fr/" target="_blank" rel="noopener">restaurant-kern.fr →</a>
-      </div>
-      <div class="spot">
-        <span class="cat">Plage &amp; vue</span>
-        <h4>Hôtel de la Plage — Excenevex</h4>
-        <p>Vue incroyable sur le Léman, accès à la seule plage de sable naturelle du lac</p>
-        <p>Chem. de l'Hôtel de la Plage, 74140 Excenevex · 04 50 72 81 12</p>
-        <a href="https://www.hoteldelaplage-excenevex.com/fr" target="_blank" rel="noopener">hoteldelaplage-excenevex.com →</a>
-      </div>
-    </div>
-
-    <h3 style="font-size:1.1rem; margin-bottom:14px;">🧀 Caves, fromages &amp; commerces</h3>
-    <div class="grid grid-3">
-      <div class="spot">
-        <span class="cat">Cave</span>
-        <h4>V and B</h4>
-        <p>350 bières, 300 vins, 200 whiskies, 100 rhums du monde entier.</p>
-        <p>Coup de cœur : bières du Mont Blanc aromatisées</p>
-        <a href="https://vandb.fr/" target="_blank" rel="noopener">vandb.fr →</a>
-      </div>
-      <div class="spot">
-        <span class="cat">Fromagerie</span>
-        <h4>Fromagerie du Noyer</h4>
-        <p>Évian-les-Bains (04 50 04 98 86) · Thonon-les-Bains (04 50 81 35 02) · Saint-Paul-en-Chablais</p>
-        <p>Coup de cœur : saucisson au beaufort, raclette forestière</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Fromager affineur</span>
-        <h4>Buttay</h4>
-        <p>Lun–jeu 8h30–12h &amp; 14h–18h30 · ven–sam 8h30–12h &amp; 14h–19h</p>
-        <a href="https://www.buttay-affineur.fr/" target="_blank" rel="noopener">buttay-affineur.fr →</a>
-      </div>
-      <div class="spot">
-        <span class="cat">Boucherie</span>
-        <h4>Boucherie de Vongy</h4>
-        <p>6 Route de Vongy, 74200 Thonon-les-Bains</p>
-        <p>Mar–sam 7h30–12h45 / 15h–19h30 · dim 7h30–12h45 · 04 50 71 34 00</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Boulangerie</span>
-        <h4>Pains et Gourmandises</h4>
-        <p>535 Av. de Thonon, 74200 Allinges (700 m)</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Boulangerie</span>
-        <h4>Le Fournil du Chablais</h4>
-        <p>13 Av. de la Dranse, 74200 Thonon-les-Bains</p>
-      </div>
-    </div>
-
-    <h3 style="font-size:1.1rem; margin:40px 0 14px;">🧺 Marchés</h3>
-    <div class="grid grid-3">
-      <div class="spot">
-        <span class="cat">Thonon-les-Bains</span>
-        <p>Lundi, jeudi et dimanche · nocturnes chablaisiennes le vendredi soir en été (18h)</p>
-        <p>Marché d'art : jeudis, vendredis, dimanches selon saison</p>
-        <a href="https://www.thononlesbains.com/deguster/marches/" target="_blank" rel="noopener">Détails →</a>
-      </div>
-      <div class="spot">
-        <span class="cat">Évian-les-Bains</span>
-        <p>Mardi et vendredi, rue du Lac</p>
-      </div>
-      <div class="spot">
-        <span class="cat">Douvaine</span>
-        <p>Dimanche, place de la Mairie</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== ACTIVITÉS ===================== -->
-<section id="activites">
-  <div class="wrap-wide">
-    <div class="section-head">
-      <div class="eyebrow"><span class="num">07</span>Prendre de la hauteur</div>
-      <h2>Visiter la région</h2>
-      <p>Un point de départ idéal pour explorer les rives du Léman comme les sommets alentour.</p>
-    </div>
-
-    <div class="distances card" style="margin-bottom:44px;">
-      <div class="distances">
-        <div><span class="km">9,2</span><span class="place">km · Évian-les-Bains</span></div>
-        <div><span class="km">40</span><span class="place">km · Genève</span></div>
-        <div><span class="km">47</span><span class="place">km · Montreux</span></div>
-        <div><span class="km">47</span><span class="place">km · Avoriaz</span></div>
-        <div><span class="km">73</span><span class="place">km · Lausanne</span></div>
-        <div><span class="km">81</span><span class="place">km · Annecy</span></div>
-        <div><span class="km">106</span><span class="place">km · Chamonix Mont-Blanc</span></div>
-      </div>
-    </div>
-
-    <h3 style="font-size:1.1rem; margin-bottom:20px;">Nos activités coup de cœur</h3>
-
-    <div class="activity">
-      <h4>Randonnée à Avoriaz &amp; Les Lindarets</h4>
-      <p>Le village des chèvres en liberté.</p>
-      <a href="https://www.avoriaz.com/ete/velo--rando/rando--trail/randonnees/" target="_blank" rel="noopener">avoriaz.com →</a>
-    </div>
-    <div class="activity">
-      <h4>Lac de Montriond</h4>
-      <p>Parfait pour les jours de canicule — à 1072 m d'altitude, l'air y est plus respirable.</p>
-      <a href="https://www.valleedaulps.com/lac-de-montriond.html" target="_blank" rel="noopener">valleedaulps.com →</a>
-    </div>
-    <div class="activity">
-      <h4>Plage de sable naturelle d'Excenevex</h4>
-      <p>L'unique plage de sable naturel du lac Léman.</p>
-      <a href="http://tourisme.excenevex.fr/decouvrir/la-plage/" target="_blank" rel="noopener">tourisme.excenevex.fr →</a>
-    </div>
-    <div class="activity">
-      <h4>Plages cachées de la Châtaigneraie</h4>
-      <p>En haut des marches de la plage surveillée, longez la forêt sur la gauche puis descendez par l'un des escaliers pour profiter de l'ombre en été.</p>
-    </div>
-    <div class="activity">
-      <h4>Forêt de Ripaille (Thonon)</h4>
-      <p>Visite gratuite.</p>
-    </div>
-    <div class="activity">
-      <h4>Châteaux des Allinges</h4>
-      <p>Le monument historique juste à côté de la maison.</p>
-    </div>
-    <div class="activity">
-      <h4>Mont Forchat</h4>
-      <p>Randonnée au cœur de la forêt avec une vue impressionnante à l'arrivée.</p>
-      <a href="https://www.alpesduleman.com/randonnee-le-mont-forchat-depuis-tres-le-mont.html" target="_blank" rel="noopener">alpesduleman.com →</a>
-    </div>
-    <div class="activity">
-      <h4>Sixt-Fer-à-Cheval</h4>
-      <p>Randonnée du bout du monde avec des cascades incroyables.</p>
-      <a href="https://www.haut-giffre.fr/je-decouvre/nos-territoires/sixt-fer-a-cheval/" target="_blank" rel="noopener">haut-giffre.fr →</a>
-    </div>
-
-    <h3 style="font-size:1.1rem; margin:36px 0 14px;">🎫 Offices de tourisme</h3>
-    <div class="grid grid-2">
-      <div class="spot">
-        <h4>Château de Sonnaz</h4>
-        <p>Nov–mars : lun–sam 9h–12h15 / 13h45–17h30<br>Sept–oct &amp; avril–juin : lun–sam 9h–12h15 / 13h45–18h30<br>Juillet–août : lun–sam 9h–18h30 (non-stop)</p>
-      </div>
-      <div class="spot">
-        <h4>Kiosque du Port de Rives</h4>
-        <p>Mi-juin à mi-septembre : tous les jours 10h–18h30 (non-stop)</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== URGENCES ===================== -->
-<section id="urgences" class="alt">
-  <div class="wrap-wide">
-    <div class="emergency">
-      <div class="eyebrow" style="color:var(--amber);"><span class="num" style="background:var(--amber); color:var(--ink);">08</span>En cas de besoin</div>
-      <h2>Urgences &amp; contact</h2>
-      <div class="em-grid">
-        <div class="em-item">
-          <div class="lbl">Urgences</div>
-          <div class="val">112</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">🧀 Fromager affineur Buttay</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Lun–jeu 8h30–12h / 14h–18h30, ven–sam jusqu'à 19h. <a href="https://www.buttay-affineur.fr/" target="_blank" rel="noopener">buttay-affineur.fr ↗</a></p>
         </div>
-        <div class="em-item">
-          <div class="lbl">Ludovic</div>
-          <div class="val">06 17 62 43 39</div>
-          <div class="sub">SMS / WhatsApp</div>
-        </div>
-        <div class="em-item">
-          <div class="lbl">Laure</div>
-          <div class="val">06 21 96 33 81</div>
-          <div class="sub">SMS / WhatsApp</div>
-        </div>
-        <div class="em-item">
-          <div class="lbl">Email</div>
-          <div class="val" style="font-size:1rem;">ludovic.somier@gmail.com</div>
+        <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;padding:22px 24px;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+          <h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:18px;color:var(--ink,#2c241d)">🥩 Boucherie de Vongy</h4>
+          <p style="margin:0;font:400 14px/1.55 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">6 route de Vongy, Thonon. Mar–sam 7h30–12h45 / 15h–19h30, dim 7h30–12h45 · <a href="tel:+33450713400">04 50 71 34 00</a></p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <div class="signatures">Ludovic, Laure, Chloé, Thibaut &amp; Raven</div>
-    <p>Merci de nous signaler immédiatement tout dysfonctionnement ou casse — et bon séjour en Haute-Savoie !</p>
-  </div>
-</footer>
+  <!-- LA REGION -->
+  <section id="region" style="scroll-margin-top:80px;max-width:1120px;margin:0 auto;padding:64px 22px 0">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
+      <span style="font:700 13px/1 var(--font-body),sans-serif;color:var(--accent,#b0603a)">07</span>
+      <span style="height:1px;flex:1;background:var(--line,#e6d9c3)"></span>
+    </div>
+    <h2 style="font-family:var(--font-head),serif;font-size:clamp(30px,4.5vw,44px);color:var(--ink,#2c241d);margin:0 0 6px">Visiter la région</h2>
+    <p style="margin:0 0 22px;font:400 16px/1.6 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Entre lac et montagnes, tout est proche. Nos randonnées et coins secrets préférés.</p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px">
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Évian-les-Bains · 9,2 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Genève · 40 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Morzine - Les Gets · 35 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Avoriaz · 47 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Montreux · 47 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Lausanne · 73 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Annecy · 81 km</span>
+      <span style="padding:8px 14px;border-radius:999px;background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);font:600 13px/1 var(--font-body),sans-serif;color:var(--ink,#2c241d)">Chamonix Mont-Blanc · 106 km</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;padding-bottom:8px">
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/lindarets.jpg" alt="Avoriaz / Lindarets" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Randonnée d'Avoriaz</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Avec le village des Lindarets et ses chèvres en liberté. <a href="https://www.avoriaz.com/ete/velo--rando/rando--trail/randonnees/" target="_blank" rel="noopener">itinéraires ↗</a></p></div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/montriond.jpg" alt="Lac de Montriond" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Lac de Montriond</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Parfait les jours de canicule (1072 m, l'air y est plus respirable). <a href="https://www.valleedaulps.com/lac-de-montriond.html" target="_blank" rel="noopener">infos ↗</a></p></div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/excenevex.jpg" alt="Plage d'Excenevex" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Plage d'Excenevex</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">L'unique plage de sable naturel du lac Léman. <a href="http://tourisme.excenevex.fr/decouvrir/la-plage/" target="_blank" rel="noopener">découvrir ↗</a></p></div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/chataigneraie.webp" alt="Châtaigneraie" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Plages cachées de la Châtaigneraie</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">En haut des marches, longez la forêt à gauche puis descendez aux escaliers — de l'ombre garantie l'été.</p></div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/mont_forchat.jpg" alt="Mont Forchat" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Mont Forchat</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">Randonnée en forêt avec une vue impressionnante à l'arrivée. <a href="https://www.alpesduleman.com/randonnee-le-mont-forchat-depuis-tres-le-mont.html" target="_blank" rel="noopener">itinéraire ↗</a></p></div>
+      </div>
+      <div style="background:var(--surface,#fffdf8);border:1px solid var(--line,#e6d9c3);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px var(--shadow,rgba(60,42,24,.08))">
+        <div style="aspect-ratio:16/10;overflow:hidden"><img src="img/six-fer-a-cheval.jpg" alt="Sixt-Fer-à-Cheval" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <div style="padding:18px 20px"><h4 style="margin:0 0 6px;font-family:var(--font-head),serif;font-size:17px;color:var(--ink,#2c241d)">Sixt-Fer-à-Cheval</h4><p style="margin:0;font:400 13.5px/1.5 var(--font-body),sans-serif;color:var(--ink-2,#6b5d4f)">La randonnée du « bout du monde » et ses cascades incroyables. Aussi : Forêt de Ripaille & Châteaux des Allinges (visites gratuites).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="margin-top:64px;background:var(--ink,#2c241d);color:var(--on-accent,#fff8ef)">
+    <div style="max-width:1120px;margin:0 auto;padding:44px 22px;text-align:center">
+      <p style="font-family:var(--font-display),serif;font-size:28px;margin:0">Bon séjour en Haute-Savoie !</p>
+      <p style="margin:12px 0 0;font:400 14px/1.6 var(--font-body),sans-serif;opacity:.7">Une question ? <a style="color:var(--on-accent,#fff8ef);text-decoration:underline">06 21 96 33 81</a> · <a style="color:var(--on-accent,#fff8ef);text-decoration:underline">06 17 62 43 39</a> · <a href="mailto:ludovic.somier@gmail.com" style="color:var(--on-accent,#fff8ef);text-decoration:underline">ludovic.somier@gmail.com</a></p>
+      <p style="margin:20px 0 0;font:400 12px/1 var(--font-body),sans-serif;opacity:.4">Ludovic, Laure, Chloé, Thibaut & Raven — Allinges</p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast" style="position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:70;background:var(--ink,#2c241d);color:var(--on-accent,#fff8ef);padding:12px 20px;border-radius:999px;font:600 14px/1 var(--font-body),sans-serif;box-shadow:0 10px 30px -8px rgba(0,0,0,.4);display:none"></div>
+
+</div>
 
 <script>
-  // Mobile menu
-  const burgerBtn = document.getElementById('burgerBtn');
-  const closeBtn = document.getElementById('closeBtn');
-  const panel = document.getElementById('mobilePanel');
-  burgerBtn.addEventListener('click', () => panel.classList.add('open'));
-  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+  var toastTimer = null;
+  function showToast(msg){
+    var el = document.getElementById('toast');
+    el.textContent = msg;
+    el.style.display = 'block';
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ el.style.display = 'none'; }, 1900);
+  }
+  function copyText(text, msg){
+    try {
+      navigator.clipboard.writeText(text);
+      showToast(msg);
+    } catch(e){ showToast('Copie indisponible'); }
+  }
 
-  // Accordions
-  document.querySelectorAll('.accordion').forEach(acc => {
-    acc.querySelectorAll('.acc-item').forEach(item => {
-      const trigger = item.querySelector('.acc-trigger');
-      const panelEl = item.querySelector('.acc-panel');
-      const setHeight = () => { panelEl.style.maxHeight = item.classList.contains('open') ? panelEl.scrollHeight + 'px' : '0px'; };
-      setHeight();
-      trigger.addEventListener('click', () => {
-        item.classList.toggle('open');
-        setHeight();
+  (function(){
+    var nav = document.querySelector('[data-nav]');
+    if(!nav) return;
+    var links = [].slice.call(nav.querySelectorAll('a'));
+    var ids = links.map(function(a){ return a.getAttribute('href').slice(1); });
+    var sections = ids.map(function(id){ return document.getElementById(id); }).filter(Boolean);
+    function setActive(id){
+      links.forEach(function(a){
+        var on = a.getAttribute('href') === '#' + id;
+        a.style.background = on ? 'var(--accent)' : 'transparent';
+        a.style.color = on ? 'var(--on-accent)' : 'var(--ink-2)';
       });
-      window.addEventListener('resize', () => { if(item.classList.contains('open')) setHeight(); });
-    });
-  });
-
-  // Scrollspy
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.links a');
-  const spy = () => {
-    let current = '';
-    sections.forEach(sec => {
-      const rect = sec.getBoundingClientRect();
-      if (rect.top <= 120 && rect.bottom >= 120) current = sec.id;
-    });
-    navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
-  };
-  document.addEventListener('scroll', spy);
-  spy();
+    }
+    var io = new IntersectionObserver(function(entries){
+      var vis = entries.filter(function(e){ return e.isIntersecting; })
+        .sort(function(a,b){ return b.intersectionRatio - a.intersectionRatio; });
+      if(vis[0]) setActive(vis[0].target.id);
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: [0, .25, .5] });
+    sections.forEach(function(s){ io.observe(s); });
+  })();
 </script>
 </body>
 </html>
+
