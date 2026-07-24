@@ -1,17 +1,82 @@
 [
   {
-    "name": "Famille Martin",
-    "text": "Séjour merveilleux dans votre cocon, tout était parfait. La vue sur le lac restera un souvenir inoubliable. Merci pour votre accueil !",
-    "date": "12 août 2025"
+    "name": "Anne, 5/5",
+    "text": "Excellente semaine passée chez Laure et Ludo ! Appartement grand, bien équipé et très agréable (chacune sa chambre et sa salle de bains... quel luxe !). Quel plaisir de découvrir cette belle région dans de telles conditions...Pour une première expérience via ce site, c'est une belle réussite ! Merci !",
+    "date": "Juillet 2023"
   },
   {
-    "name": "Sophie & Marc",
-    "text": "Maison chaleureuse et impeccable, vos bonnes adresses nous ont régalés. À très bientôt pour l'échange retour !",
-    "date": "3 juillet 2025"
+    "name": "Laurent Et Marianne, 5/5",
+    "text": "Je recommande la petite famille de Laure et Ludo qui ont été des invités parfaits : communiquants et respectueux. Ils ont laissé notre maison impeccable et même leur chien n'a laissé aucune trace de son passage chez nous!",
+    "date": "Juillet 2023"
   },
-  { 
-	"name": "Lucien & Yvette",
-    "text": "Séjour incroyable, hôtes au top! Nous recommandons!",
-    "date": "17 juillet 2026"
+  {
+    "name": "Vanessa, 5/5",
+    "text": "Nous avons passé un super séjour chez Laure et Ludovic. L'appartement est très bien placé pour aller se balader à pied au bord du lac et en moins d'une demi-heure en voiture, rejoindre les premières stations de montagne. L'appartement est très agréable, spacieux et fonctionnel, avec deux terrasses agréables (même en hiver), nous avons apprécié les petites attentions à notre arrivée et les documents touristiques à disposition. Très bonne communication avec Laure tout au long du séjour. Nous espérons pouvoir découvrir la région en été !",
+    "date": "Février 2023"
+  },
+  {
+    "name": "Johanna, 5/5",
+    "text": "Super 1er échange pour nous. Laure et Ludovic ainsi que leurs enfants et Raven ont laissé notre logement dans le même état de propreté que nous l'avions laissé! Personnes de confiance et très respectueuses! Vous pouvez laisser votre logement sans préoccupation. De notre côté leur appartement est très bien équipé et lumineux. Très agréable avec ses 2 terrasses avec toujours l'une des 2 ensoleillées en fonction de l'heure. Situé dans une région magnifique avec des paysages à couper le souffle! Merci pour cet échange mémorable. Johanna",
+    "date": "Août 2022"
+  },
+  {
+    "name": "Anne Et Gabriel, 5/5",
+    "text": "Tout s'est très bien passé avec Laure et sa famille. Notre chat a été chouchouté et notre maison bien entretenue. Merci !",
+    "date": "Février 2022"
+  },
+  {
+    "name": "Anne Et Dorian, 5/5",
+    "text": "Très bon échange réciproque avec Laure et Ludo que nous avons eu la chance de rencontrer lors de nos trajets retours. Leur appartement est très propre, très fonctionnel (nous sommes venus à 6 adultes) et idéalement situé pour découvrir la région de Thonon et ses alentours : Evian, Yvoire, le lac Léman et de nombreuses randonnées (que nous n’avons malheureusement pas pu faire faute d’une météo adaptée… ce sera pour un autre séjour !). Les deux terrasses offrent un panorama magnifique sur les Alpes pour la première, et la seconde un point de vue idéal sur le « Mémorial des Justes » que l'on peut visiter dans le parc du Château de Ripailles (avec de la chance les chevreuils et autres renards sortirons du bois à la nuit tombée). Leur livret d'accueil est très complet et aide grandement au bon déroulement du séjour, on va essayer d'en faire un aussi bien d'ailleurs ! De notre côté, la maison a été retrouvée très propre avec un petit mot de chacun sur notre tableau blanc, même de Raven ;-) Raven, leur compagnon à quatre pattes est adorable et joueur (même si nous ne nous sommes rencontré que brièvement sur le trajet retour), comme ses maîtres il est très respectueux des lieux et n’a laissé aucune trace de son passage (il a même retrouvé des balles de ping pong perdues.",
+    "date": "Juillet 2021"
+  },
+  {
+    "name": "BERNADETTE, 5/5",
+    "text": "Très bel échange confiance et nous avons retrouvé notre maison comme ns l'avions laissé. Et leur appartement comme sur les photos spacieux lumineux et bien situé pour visiter la région et proximité du lac.",
+    "date": "Juillet 2021"
+  },
+  {
+    "name": "Marie, 5/5",
+    "text": "C'était notre premier échange et : WAHOO ! Tout d'abord, Laure m'a longuement parlé de son appartement et de sa région par téléphone. J'étais donc très rassurée. A notre arrivée nous avons découvert un appartement magnifique (avec une vue à couper le souffle) et d'une propreté parfaite !! Vraiment un immense merci à Laure, Ludo et leurs deux enfants (qui avaient laissé des petits mots pour les nôtres !). A très bientôt j'espère... Marie",
+    "date": "Mai 2021"
+  },
+  {
+    "name": "Denis Et Nathalie, 5/5",
+    "text": "Nous avons passé un excellent séjour chez Laure et Ludo à Thonon-Les-Bains. Leur appartement est très bien situé, à proximité du lac, avec ses 2 terrasses offrant une belle vue sur les montagnes. Très spacieux, nous y avons été très confortablement installés à 5. La communication a été très agréable et facile. Laure et Ludo ont parfaitement pris soin de notre maison. Impossible d'imaginer qu'ils voyagent avec un chien ;-)",
+    "date": "Février 2021"
+  },
+  {
+    "name": "Michel & Caroline, 5/5",
+    "text": "Laure et Ludo ont tout fait pour rendre l’échange parfait: excellente communication avant, pendant et même après l’échange. Leur appartement est spacieux, très fonctionnel et parfaitement bien situé. La ville de Thonon et les alentours du lac sont magnifiques. Merci encore!",
+    "date": "Octobre 2020"
+  },
+  {
+    "name": "Martine, 5/5",
+    "text": "Excellent séjour à Thonon chez Laure et Ludovic. L'appartement est super bien placé pour découvrir la région et à deux pas du lac à pieds pour se baigner ! Nous n'avons pas eu l'occasion de l'utiliser mais il y a même un paddle que l'on peut utiliser dans l'appartement. Le logement est très beau, dans un bâtiment neuf, très propre et lumineux. La communication a été parfaite, nous avons reçu un livret d'accueil par mail avant notre arrivée. A notre arrivée il y avait des brochures sur la région et des pass que nous pouvions utiliser. Merci pour ce séjour !",
+    "date": "Août 2020"
+  },
+  {
+    "name": "Céline, 5/5",
+    "text": "Laure, Ludo et leurs deux enfants ont été des invités parfaits : sympathiques, respectueux, de confiance et totalement dans la philosophie de l'échange de maison. A notre retour, notre maison était impeccable. Nous les recommandons à 100%",
+    "date": "Août 2020"
+  },
+  {
+    "name": "Christine Et Septime, 5/5",
+    "text": "Nous avons passé une excellente semaine à Thonon. L’appartement est bien situé, à 10mn à pied des petites plages disséminées dans le parc de la Chataigneraie et à quelques minutes en voiture des commerces. Les jours de grosses chaleurs, sur les conseils de Laure et Ludo, nous sommes allés respirer l’air plus frais des montagnes. Le lac de Montriond, les Gets, Morzine, Avoriaz, les Lindarets sont à moins d’une heure de route. L’appartement est fonctionnel, joliment décoré et d’une propreté impeccable. La communication a été fluide tout au long de l'échange et en rentrant, nous avons retrouvé notre maison nickel. Merci pour cet échange réussi !",
+    "date": "Juillet 2020"
+  },
+  {
+    "name": "Steph, 5/5",
+    "text": "Des invités parfaits, rien à redire. c'était un plaisir de vous accueillir à Cannes, nous vous recommandons sincèrement pour vos prochains échanges.",
+    "date": "Février 2020"
+  },
+  {
+    "name": "Christiane, 5/5",
+    "text": "Laure Et Ludo, jeune couple prevenant, ils nous ont attendu pour nous accueillir. Leur appartement, agréable et fonctionnel, est très bien situé, tout près du lac et d'un parc où nous avons vus des biches de la terrasse.. Thonon et Evian, toutes proches sont superbes avec une belle ambiance. Merci à tous les 2, on se reverra peut-être à Saint Raphaël.",
+    "date": "Décembre 2019"
+  },
+  {
+    "name": "Estelle, 5/5",
+    "text": "Laure et Ludo ont été des invités très agréables. La conversation par mail a été très facile, et ils ont pris grand soin de notre maison. Nous avons tout retrouvé dans un parfait état et sommes très contents de cet échange.",
+    "date": "Décembre 2019"
   }
 ]
